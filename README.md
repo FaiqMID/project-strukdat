@@ -13,10 +13,30 @@ Selain poin yang disebutkan diatas, pendataan barang keluar dapat menjadi inform
 Aplikasi untuk mendata barang masuk dan keluar pada usaha jasa pengiriman barang dapat dibuat menggunakan bahasa pemrograman C++ dengan mengimplementasikan beberapa jenis struktur data untuk menambah fungsionalitas aplikasi tersebut.
 
 ## Tujuan dan Manfaat
-<p>Tujuan dari proposal ini adalah mengimplementasikan materi struktur data dalam bentuk aplikasi serta membuat aplikasi yang dapat dipakai oleh pengusaha jasa pengiriman barang.</p>
-<p>Manfaat dari proposal ini adalah menambah pemahaman praktikan dalam mengimplementasikan struktur data serta mempermudah pendataan barang masuk dan keluar dalam usaha jasa pengiriman barang yang menggunakan aplikasi ini. </p>
+Tujuan dari proposal ini adalah mengimplementasikan materi struktur data dalam bentuk aplikasi serta membuat aplikasi yang dapat dipakai oleh pengusaha jasa pengiriman barang.
+Manfaat dari proposal ini adalah menambah pemahaman praktikan dalam mengimplementasikan struktur data serta mempermudah pendataan barang masuk dan keluar dalam usaha jasa pengiriman barang yang menggunakan aplikasi ini.
 
 ## Penjelasan Aplikasi
+Aplikasi ini dikhususkan untuk pekerja gudang barang dan kurir pengantar barang dari gudang. Implementasi struktur data Linked List dan Queue sebagai Priority Queue pada pengurutan barang masuk dan Implementasi struktur data Stack pada pemuatan barang ke kendaraan serta informasi barang paling luar.
+
+1. Setiap barang memiliki atribut:
+- ID barang
+- Nama barang
+- Nama pengirim
+- Nama penerima
+- Alamat penerima
+- Status barang
+
+2. Pekerja gudang dapat melakukan:
+- Entry barang masuk
+- Melihat list barang masuk yang sudah diurutkan berdasarkan jenis pengiriman
+- Melihat informasi setiap barang yang ada di dalam list
+
+3. Kurir barang dapat melakukan:
+- Entry barang yang dimuat ke kendaraan (barang keluar)
+- Melihat list barang yang dimuat ke kendaraan
+- Melihat informasi setiap barang yang ada di dalam list
+- Melihat informasi barang yang paling luar dan yang paling dulu diantar
 
 
 ## Gambar Rancangan Antar Muka
