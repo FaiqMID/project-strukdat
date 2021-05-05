@@ -13,7 +13,8 @@ Selain poin yang disebutkan diatas, pendataan barang keluar dapat menjadi inform
 Aplikasi untuk mendata barang masuk dan keluar pada usaha jasa pengiriman barang dapat dibuat menggunakan bahasa pemrograman C++ dengan mengimplementasikan beberapa jenis struktur data untuk menambah fungsionalitas aplikasi tersebut.
 
 ## Tujuan dan Manfaat
-Tujuan dari proposal ini adalah mengimplementasikan materi struktur data dalam bentuk aplikasi serta membuat aplikasi yang dapat dipakai oleh pengusaha jasa pengiriman barang. Manfaat dari proposal ini adalah menambah pemahaman praktikan dalam mengimplementasikan struktur data serta mempermudah pendataan barang masuk dan keluar dalam usaha jasa pengiriman barang yang menggunakan aplikasi ini
+<p>Tujuan dari proposal ini adalah mengimplementasikan materi struktur data dalam bentuk aplikasi serta membuat aplikasi yang dapat dipakai oleh pengusaha jasa pengiriman barang.</p>
+<p>Manfaat dari proposal ini adalah menambah pemahaman praktikan dalam mengimplementasikan struktur data serta mempermudah pendataan barang masuk dan keluar dalam usaha jasa pengiriman barang yang menggunakan aplikasi ini. </p>
 
 ## Penjelasan Aplikasi
 
