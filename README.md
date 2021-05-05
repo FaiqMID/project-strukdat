@@ -24,6 +24,7 @@ Buat rancangan antar muka selengkap mungkin sesuai fungsi aplikasinya. rancangan
 diusahakan serapih dan seindah mungkin. tools yang digunakan dalam pembuatan rancangan gambar
 dibebaskan sesuai kreatifitas kalian
 !-->
+![StrukdatUI](https://user-images.githubusercontent.com/67610949/117093545-74688b80-ad8b-11eb-8937-dad08d7443fa.png)
 
 
 ## Rencana Pengerjaan Projek
