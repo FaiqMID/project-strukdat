@@ -36,7 +36,7 @@ Aplikasi ini dikhususkan untuk pekerja gudang barang dan kurir pengantar barang 
 - Entry barang yang dimuat ke kendaraan (barang keluar)
 - Melihat list barang yang dimuat ke kendaraan
 - Melihat informasi setiap barang yang ada di dalam list
-- Melihat informasi barang yang paling luar dan yang paling dulu diantar
+- Melihat informasi barang yang paling luar (barang yang paling dulu diantar)
 
 
 ## Gambar Rancangan Antar Muka
