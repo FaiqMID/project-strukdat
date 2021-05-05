@@ -25,6 +25,7 @@ Aplikasi ini dikhususkan untuk pekerja gudang barang dan kurir pengantar barang 
 - Nama pengirim
 - Nama penerima
 - Alamat penerima
+- Jenis Pengiriman
 - Status barang
 
 2. Pekerja gudang dapat melakukan:
