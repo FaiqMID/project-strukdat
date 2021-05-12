@@ -29,6 +29,8 @@ Queue<T> new_queue() {
   return Q;
 }
 
+//nilai prioritas tinggi adalah yang lebih prioritas
+
 template <typename T>
 void enqueue(Queue<T> &q, const T &value, int priority) {
   ElementPtr<T> help = q.head, pre;
