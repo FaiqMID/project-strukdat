@@ -1,5 +1,39 @@
 #pragma once
 
+//deklarasi
+struct Element{
+  char id[3];
+  std::string namaBarang;
+  std::string namaPengirim;
+  std::string namaPenerima;
+  std::string alamatPenerima;
+  int jenisPengiriman;
+
+  Element *next;
+};
+
+typedef Element* elmPtr;
+
+void createElement( elmPtr& newElm, char id[3], 
+                    std::string namaBarang, 
+                    std::string namaPengirim, 
+                    std::string namaPenerima,
+                    std::string alamatPenerima, 
+                    int jenisPengiriman)
+{
+  newElm = new Element;
+  for (int i = 0; i < sizeof(id); i++)
+  {
+    newElm->id[i] = id[i];
+  }
+  newElm->namaBarang = namaBarang;
+  newElm->namaPengirim = namaPengirim;
+  newElm->namaPenerima = namaPenerima;
+  newElm->alamatPenerima = alamatPenerima;
+  newElm->jenisPengiriman = jenisPengiriman;
+  newElm->next = nullptr;
+}
+
 //struktur data queue
 //mulai
 
