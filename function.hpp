@@ -117,5 +117,5 @@ void dequeue(Queue<T> &q) {
    delete del;
 }
 
-//akhir stuktur data queue
+//akhir dari stuktur data queue
 
