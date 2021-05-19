@@ -1,6 +1,6 @@
 #pragma once
+#include <iostream>
 
-//deklarasi
 struct Element{
   char id[3];
   std::string namaBarang;
@@ -22,8 +22,7 @@ void createElement( elmPtr& newElm, char id[3],
                     int jenisPengiriman)
 {
   newElm = new Element;
-  for (int i = 0; i < sizeof(id); i++)
-  {
+  for(int i=0; i<3; i++){
     newElm->id[i] = id[i];
   }
   newElm->namaBarang = namaBarang;
@@ -33,89 +32,160 @@ void createElement( elmPtr& newElm, char id[3],
   newElm->jenisPengiriman = jenisPengiriman;
   newElm->next = nullptr;
 }
-
-//struktur data queue
-//mulai
-
-template <typename T>
-struct Element {
-  int data;
-  int priority;
-  Element* next;
-};
-
-template <typename T>
-using ElementPtr = Element<T> *;
-
-template <typename T>
-struct Queue {
-  ElementPtr<T> head;
-  ElementPtr<T> tail;
-};
-
-template <typename T>
-Queue<T> new_queue() {
-  Queue<T> Q;
-
-  Q.head = nullptr;
-  Q.tail = nullptr;
-
-  return Q;
+//Linked List start
+typedef elmPtr LinkedList;
+void InsertLast(LinkedList &head, elmPtr pNew){
+  if (head == nullptr){
+    head = pNew;
+  } else {
+    elmPtr temp = head;
+    while (temp->next != nullptr){
+      temp = temp->next;
+    }
+    temp->next = pNew;
+  }
 }
 
-//nilai prioritas tinggi adalah yang lebih prioritas
+void deleteFirst(LinkedList &head, elmPtr &pDelete){
+  if (head == nullptr){
+    pDelete == nullptr;
+  } else {
+    pDelete = head;
+    head = head->next;
+    pDelete->next = nullptr;
+  }
+  
+}
+//Linked List end
 
-template <typename T>
-void enqueue(Queue<T> &q, const T &value, int priority) {
-  ElementPtr<T> help = q.head, pre;
-  Element<T>* baru = new Element<T>;
-  baru->data = value;
-  baru->priority = priority;
-  baru->next = nullptr;
+//stack start
+typedef elmPtr S;
+S Top, Top2;
 
-  if(q.head==nullptr && q.tail==nullptr){
-    q.head = baru;
-    q.tail= baru;
-  } else{ 
-    while (baru->priority <= help->priority){
-      if(help->next == nullptr) {break;}
-      pre = help;
-      help = help->next;
+bool isStackEmpty(S Top){
+  if (Top == nullptr){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void createStack(S& Top){
+  Top = nullptr;
+}
+
+void push(S& Top, elmPtr newElm){
+  newElm = new Element;
+  std::cout << "";
+  if (isStackEmpty(Top))
+  {
+    Top = newElm;
+  } else {
+    newElm->next = Top;
+    Top = newElm;
+  }
+}
+
+void pop(S& Top, elmPtr& pDel){
+  if (isStackEmpty(Top))
+  {
+    std::cout << "Stack Underflow!\n";
+    pDel = nullptr;
+  } else if (Top->next == nullptr)
+  {
+    pDel = Top;
+    Top = nullptr;
+  } else {
+    pDel = Top;
+    Top = Top->next;
+    pDel->next = nullptr;
+  }
+}
+
+void traversalStack(S Top){
+  elmPtr pHelp = Top;
+  if (isStackEmpty(Top)){
+    std::cout << "Stack Kosong!\n";
+  } else {
+    do
+    {
+      std::cout << "|" << pHelp->id << "| - ";
+      pHelp = pHelp->next;
+    } while (pHelp != nullptr);
+  }
+}
+
+
+//stack end
+
+//queue start
+struct Queue{
+  elmPtr Head;
+  elmPtr Tail;
+};
+Queue Q, Q2;
+
+void createQueue(Queue& Q){
+  Q.Head = nullptr;
+  Q.Tail = nullptr;
+}
+
+bool isQueueEmpty(Queue Q){
+  if (Q.Head == nullptr && Q.Tail == nullptr)
+  {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void enqueue(Queue &q, elmPtr newElement){
+  newElement = new Element;
+  elmPtr ptrPrev = nullptr;
+  elmPtr pHelp = Q.Head;
+
+  if (q.Head == nullptr && q.Tail == nullptr){
+    q.Head = newElement;
+    q.Tail = newElement;
+  } else {
+    while (newElement->jenisPengiriman >= pHelp->jenisPengiriman)
+    {
+      if(pHelp->next == nullptr){
+        break;
+      }
+      ptrPrev = pHelp;
+      pHelp = pHelp->next;
     }
 
-    if(help==q.head && baru->priority > help->priority){
-      baru->next = help;
-      q.head = baru;
-    } else if (help==q.tail && baru->priority < help->priority){
-      help->next = baru;
-      q.tail = baru; 
+    if (pHelp == q.Head && newElement->jenisPengiriman > pHelp->jenisPengiriman){
+      newElement->next = pHelp;
+      q.Head = newElement;
+    } else if (pHelp == q.Tail && newElement->jenisPengiriman < pHelp->jenisPengiriman){
+      pHelp->next = newElement;
+      q.Tail = newElement;
     } else {
-      pre->next = baru;
-      baru->next = help;
+      ptrPrev->next = newElement;
+      newElement->next = pHelp;
     }
   }
 }
 
-template <typename T>
-T top(const Queue<T> &q) {
-  return q.head->data;
+void dequeue(Queue &q, elmPtr &delElement) {
+  if (q.Head == nullptr && q.Tail == nullptr)
+  {
+    delElement = nullptr;
+  }
+  else if (q.Head->next == nullptr)
+  {
+    delElement = q.Head;
+    q.Head = nullptr;
+    q.Tail = nullptr;
+  }
+  else
+  {
+    delElement = q.Head;
+    q.Head = q.Head->next;
+    delElement->next = nullptr;
+  } 
 }
-
-template <typename T>
-void dequeue(Queue<T> &q) {
-   Element<T>* del= new Element<T>;
-   if(q.head==nullptr && q.tail==nullptr){
-     del = nullptr;
-   } else if (q.head->next == nullptr){
-     del = q.head;
-     q.head = q.tail = nullptr;
-   }  else {
-     del = q.head;
-     q.head = q.head->next;
-     del->next = nullptr;
-   }
-   delete del;
-}
-
-//akhir dari stuktur data queue
-
+//queue end
